@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <cstdio>
+#include <string>
 #include "cool-tree.h"
 #include "utilities.h"
 #include "cool-parse.h"
@@ -42,7 +43,7 @@ int main(int argc, char **argv)
             std::cerr << "Error: parse errors\n";
             std::exit(1);
         }
-        std::cout << "AST dump with types:\n";
+        std::cout << "AST dump with types from file: " << curr_filename << '\n';
         ast_root->dump_with_types(std::cerr, 1);
         /* TODO: dump AST tree (ast_root) to std::cerr */
         std::cout << "Symbol tables:\nID table:\n";
